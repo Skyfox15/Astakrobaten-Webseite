@@ -52,8 +52,9 @@ app.get("/status", (req, res) => {
 });
 
 // Server + Bot starten
-client.login("MTM4NDEyMjcyMDcxOTA4MTU2Mg.G1Cym6.64f5B0ldKs9qfafIToCVuNUjSsosm3rWIW2yek");
+client.login("MTM4NDEyMjcyMDcxOTA4MTU2Mg.Gg8iyr.CVVcizuqaap9tTD8XKTu_XfRZPCBqHY2USV7cE");
 
 app.listen(PORT, () =>
   console.log(`🌍 Webserver läuft → http://localhost:${PORT}`)
 );
+
