@@ -1,11 +1,23 @@
-require('dotenv').config(); // ganz oben
+require('dotenv').config();
 
 const { Client, GatewayIntentBits } = require('discord.js');
 const express = require('express');
 const path = require('path');
 const app = express();
 
+// Statischer Ordner
 app.use(express.static(path.join(__dirname, "public")));
+
+// Optional: Fallback, falls jemand /galerie.html oder andere Seiten direkt aufruft
+app.get('*', (req, res) => {
+  const filePath = path.join(__dirname, "public", req.path);
+  res.sendFile(filePath, err => {
+    if (err) {
+      // Wenn Datei nicht existiert, fallback auf index.html
+      res.sendFile(path.join(__dirname, "public", "index.html"));
+    }
+  });
+});
 
 const client = new Client({
   intents: [
@@ -31,7 +43,6 @@ const TARGET_IDS = {
 
 client.on('ready', async () => {
   console.log(`✅ Bot online als ${client.user.tag}`);
-
   const guild = client.guilds.cache.first();
   await guild.members.fetch();
 
