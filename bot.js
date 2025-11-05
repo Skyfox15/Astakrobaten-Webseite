@@ -1,10 +1,10 @@
-// bot.js
+require('dotenv').config(); // ganz oben
+
 const { Client, GatewayIntentBits } = require('discord.js');
 const express = require('express');
 const path = require('path');
 const app = express();
 
-// Webseite aus dem /public Ordner bereitstellen
 app.use(express.static(path.join(__dirname, "public")));
 
 const client = new Client({
@@ -15,10 +15,9 @@ const client = new Client({
   ]
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const ONLINE_USERS = new Map();
 
-// <-- DEINE DISCORD USER IDs -->
 const TARGET_IDS = {
   "The_Pandora07": "950809951402610759",
   "Skyfox2": "837664312977653849",
@@ -30,12 +29,11 @@ const TARGET_IDS = {
   "Icerice9": "965512624190136350"
 };
 
-// Discord Bot start
 client.on('ready', async () => {
   console.log(`✅ Bot online als ${client.user.tag}`);
 
   const guild = client.guilds.cache.first();
-  await guild.members.fetch(); // Mitglieder-Status laden
+  await guild.members.fetch();
 
   setInterval(() => {
     for (const [name, id] of Object.entries(TARGET_IDS)) {
@@ -43,18 +41,16 @@ client.on('ready', async () => {
       const status = member?.presence?.status ?? "offline";
       ONLINE_USERS.set(name, status);
     }
-  }, 5000); // Aktualisiert alle 5 Sekunden
+  }, 5000);
 });
 
-// API für die Website
 app.get("/status", (req, res) => {
   res.json(Object.fromEntries(ONLINE_USERS));
 });
 
-// Server + Bot starten
-client.login("MTM4NDEyMjcyMDcxOTA4MTU2Mg.Gg8iyr.CVVcizuqaap9tTD8XKTu_XfRZPCBqHY2USV7cE");
+// Token aus .env laden
+client.login(process.env.DISCORD_TOKEN);
 
 app.listen(PORT, () =>
   console.log(`🌍 Webserver läuft → http://localhost:${PORT}`)
 );
-
