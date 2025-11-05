@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Über uns – Die Astakrobaten</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Modern Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #ff9e4f;
+      --accent-2: #ffd580;
+      --bg: #05070b;
+      --panel: rgba(255, 255, 255, 0.05);
+      --glass: rgba(255, 255, 255, 0.06);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #05070b 0%, #0b1221 70%, #000 100%);
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .glow {
+      text-shadow: 0 0 12px rgba(255, 166, 0, 0.4);
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(255, 166, 0, 0.15);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+      border-radius: 1rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .panel:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(255, 166, 0, 0.15);
+    }
+
+    .accent {
+      color: var(--accent-2);
+    }
+
+    .neon-border {
+      box-shadow:
+        0 0 12px rgba(255, 166, 0, 0.5),
+        inset 0 0 6px rgba(255, 166, 0, 0.25);
+    }
+  </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-orange-500/20">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Zur Startseite">
+        <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-lg flex items-center justify-center shadow-md">
+          <span class="text-black font-bold text-sm">AA</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="text-xs text-orange-300">Die</div>
+          <div class="text-lg font-semibold glow-text text-orange-200">Astakrobaten</div>
+        </div>
+      </a>
+      <div class="flex flex-wrap justify-center gap-5 text-sm font-medium">
+        <a href="index.html" class="hover:text-orange-300 transition">Start</a>
+        <a href="about.html" class="hover:text-orange-300 transition">Über Uns</a>
+        <a href="members.html" class="hover:text-orange-300 transition">Mitglieder</a>
+        <a href="galerie.html" class="hover:text-orange-300 transition">Galerie</a>
+        <a href="rules.html" class="hover:text-orange-300 transition">Regeln</a>
+        <a href="contact.html" class="hover:text-orange-300 transition">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-[50vh] flex items-center justify-center text-center overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://i.imgur.com/Nhhqa6C.jpeg');"></div>
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-4xl md:text-6xl text-orange-300 font-bold glow">Über uns</h1>
+      <p class="mt-4 text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
+        Wer wir sind, was wir tun – und warum Chaos dazugehört!
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="py-16 px-6 max-w-5xl mx-auto space-y-16">
+
+    <!-- TEXT -->
+    <section class="text-center">
+      <h2 class="text-3xl text-orange-300 glow mb-6">Die Astakrobaten</h2>
+      <div class="text-gray-300 text-sm md:text-base leading-relaxed space-y-4 max-w-3xl mx-auto">
+        <p>
+          Wir sind eine Hauptgruppe der <span class="accent font-semibold">CastCrafter-Events</span> und haben mittlerweile großen Einfluss auf Projekte und Highlights in der Community.
+        </p>
+        <p>
+          Durch die <span class="accent font-semibold">Kooperation mit der Gummibärenbande (GBB)</span> haben wir unsere Reichweite nochmals verstärkt. Gemeinsam schaffen wir alles.
+        </p>
+        <p>
+          <span class="accent font-semibold">Werde ein Teil von uns!</span> Wir sind chaotisch, freundlich – und enttäuschen dich ganz sicher nicht!
+        </p>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section>
+      <h3 class="text-2xl text-center text-orange-300 glow mb-10">Unser Gründer & Legenden</h3>
+      <div class="flex flex-col sm:flex-row justify-center gap-8 flex-wrap">
+        <!-- Pandora -->
+        <div class="panel p-6 w-full max-w-xs text-center neon-border">
+          <img src="https://i.imgur.com/tEL9x9b.png" alt="The_Pandora07" class="w-24 h-24 mx-auto rounded-full border-4 border-orange-400 mb-4 object-cover">
+          <h4 class="text-lg text-orange-300">The_Pandora07</h4>
+          <p class="text-xs text-gray-300 mt-2">Gründer – ab jetzt wieder am malochen!</p>
+        </div>
+        <!-- CastCrafter -->
+        <div class="panel p-6 w-full max-w-xs text-center neon-border">
+          <img src="https://i.imgur.com/sYVi6hk.png" alt="CastCrafter" class="w-24 h-24 mx-auto rounded-full border-4 border-orange-400 mb-4 object-cover">
+          <h4 class="text-lg text-orange-300">CastCrafter</h4>
+          <p class="text-xs text-gray-300 mt-2">Ehrenmitglied – ohne ihn gäbe es unsere besten Momente nicht!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="text-center">
+      <blockquote class="text-base md:text-xl text-gray-300 italic max-w-2xl mx-auto">
+        „Die Astakrobaten sind wie eine Familie, die immer für dich da ist!“
+      </blockquote>
+      <p class="mt-4 text-orange-400 font-semibold">– Ein Mitglied</p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-6 bg-black/30 border-t border-orange-800/40 text-center text-sm text-gray-400">
+    <p>© 2025 Die Astakrobaten — Nicht verbunden mit Mojang oder CastCrafter.</p>
+  </footer>
+</body>
+</html>

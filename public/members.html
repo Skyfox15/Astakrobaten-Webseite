@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mitglieder – Die Astakrobaten</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --accent: #ff9e4f;
+      --accent-soft: #ffd580;
+      --bg: #05070b;
+      --panel: rgba(255,255,255,0.05);
+    }
+    body {
+      font-family: 'Orbitron', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #05070b 0%, #0b1221 70%, #000 100%);
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 {
+      text-shadow: 0 0 12px rgba(255,166,0,0.4);
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(255,166,0,0.15);
+      backdrop-filter: blur(8px);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .panel:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(255,166,0,0.2);
+    }
+    .status-dot {
+      display:inline-block;
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      border:2px solid #000;
+      position:absolute;
+      top:-4px;
+      right:-4px;
+    }
+    .online {background:#16a34a;}
+    .offline {background:#4b5563;}
+    .dnd {background:#dc2626;}
+    .idle {background:#ca8a04;}
+  </style>
+</head>
+<body class="antialiased">
+
+<header class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-orange-500/20">
+  <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-lg flex items-center justify-center shadow-md">
+        <span class="text-black font-bold text-sm">AA</span>
+      </div>
+      <div class="hidden md:block">
+        <div class="text-xs text-orange-300">Die</div>
+        <div class="text-lg font-semibold glow-text text-orange-200">Astakrobaten</div>
+      </div>
+    </a>
+    <div class="flex flex-wrap justify-center gap-5 text-sm font-medium">
+      <a href="index.html" class="hover:text-orange-300 transition">Start</a>
+      <a href="about.html" class="hover:text-orange-300 transition">Über Uns</a>
+      <a href="members.html" class="hover:text-orange-300 transition">Mitglieder</a>
+      <a href="galerie.html" class="hover:text-orange-300 transition">Galerie</a>
+      <a href="rules.html" class="hover:text-orange-300 transition">Regeln</a>
+      <a href="contact.html" class="hover:text-orange-300 transition">Kontakt</a>
+    </div>
+  </nav>
+</header>
+
+<section class="text-center py-20 bg-black/40">
+  <h1 class="text-4xl md:text-6xl text-orange-300 font-bold">Unsere Mitglieder</h1>
+  <p class="text-gray-300 mt-4 text-sm md:text-base">Wer ist gerade aktiv?</p>
+</section>
+
+<main class="max-w-7xl mx-auto px-6 py-16 space-y-24">
+
+  <!-- Anführer -->
+  <section>
+    <h2 class="text-3xl text-orange-300 mb-10 text-center">Anführer</h2>
+    <div class="flex justify-center flex-wrap gap-10">
+      
+      <div class="panel w-56" data-user="The_Pandora07">
+        <div class="relative w-fit mx-auto">
+          <img src="https://i.imgur.com/tEL9x9b.png" class="w-32 h-32 rounded-full border-4 border-orange-400 object-cover">
+          <span class="status-dot offline"></span>
+        </div>
+        <h3 class="text-xl text-orange-300 mt-4 text-center">The_Pandora07</h3>
+        <p class="text-gray-300 mt-1 text-sm text-center">Gründer & Visionär</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Stellvertreter -->
+  <section>
+    <h2 class="text-3xl text-orange-300 mb-10 text-center">Stellvertreter</h2>
+    <div class="flex justify-center flex-wrap gap-10">
+
+      <div class="panel w-56" data-user="Skyfox2">
+        <div class="relative w-fit mx-auto">
+          <img src="https://i.imgur.com/C2mZAHc.png" class="w-28 h-28 rounded-full border-4 border-orange-400">
+          <span class="status-dot offline"></span>
+        </div>
+        <h3 class="text-xl text-orange-300 mt-4 text-center">Skyfox2</h3>
+        <p class="text-gray-300 text-sm text-center mt-1">Architekt</p>
+      </div>
+
+      <div class="panel w-56" data-user="HerrPlanet">
+        <div class="relative w-fit mx-auto">
+          <img src="https://i.imgur.com/nFio3Fk.png" class="w-28 h-28 rounded-full border-4 border-orange-400">
+          <span class="status-dot offline"></span>
+        </div>
+        <h3 class="text-xl text-orange-300 mt-4 text-center">HerrPlanet</h3>
+        <p class="text-gray-300 text-sm text-center mt-1">Streber</p>
+      </div>
+
+      <div class="panel w-56" data-user="MFB_Kris">
+        <div class="relative w-fit mx-auto">
+          <img src="https://i.imgur.com/5mcL01r.png" class="w-28 h-28 rounded-full border-4 border-orange-400">
+          <span class="status-dot offline"></span>
+        </div>
+        <h3 class="text-xl text-orange-300 mt-4 text-center">MFB_Kris</h3>
+        <p class="text-gray-300 text-sm text-center mt-1">Liebhaber</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Koordinatoren -->
+  <section>
+    <h2 class="text-3xl text-orange-300 mb-10 text-center">Koordinatoren</h2>
+    <div class="flex justify-center flex-wrap gap-10">
+
+      <div class="panel w-56" data-user="SpeziKasten">
+        <div class="relative w-fit mx-auto">
+          <img src="https://i.imgur.com/32M3IJr.png" class="w-24 h-24 rounded-full border-4 border-orange-400">
+          <span class="status-dot offline"></span>
+        </div>
+        <h3 class="text-xl text-orange-300 mt-4 text-center">SpeziKasten</h3>
+        <p class="text-gray-300 text-sm text-center mt-1">Skywars</p>
+      </div>
+
+      <div class="panel w-56" data-user="Alelx_">
+        <div class="relative w-fit mx-auto">
+          <img src="https://i.imgur.com/NFs0s6c.png" class="w-24 h-24 rounded-full border-4 border-orange-400">
+          <span class="status-dot offline"></span>
+        </div>
+        <h3 class="text-xl text-orange-300 mt-4 text-center">Alelx_</h3>
+        <p class="text-gray-300 text-sm text-center mt-1">Promille</p>
+      </div>
+
+      <div class="panel w-56" data-user="Kobix">
+        <div class="relative w-fit mx-auto">
+          <img src="https://i.imgur.com/WffSwK3.png" class="w-24 h-24 rounded-full border-4 border-orange-400">
+          <span class="status-dot offline"></span>
+        </div>
+        <h3 class="text-xl text-orange-300 mt-4 text-center">Kobix</h3>
+        <p class="text-gray-300 text-sm text-center mt-1">Verschollen</p>
+      </div>
+
+      <div class="panel w-56" data-user="Icerice9">
+        <div class="relative w-fit mx-auto">
+          <img src="https://i.imgur.com/Rc2xqxZ.png" class="w-24 h-24 rounded-full border-4 border-orange-400">
+          <span class="status-dot offline"></span>
+        </div>
+        <h3 class="text-xl text-orange-300 mt-4 text-center">Icerice9</h3>
+        <p class="text-gray-300 text-sm text-center mt-1">Malocher</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="bg-black/30 border-t border-orange-800/40 text-center py-8 text-sm text-gray-400">
+  © 2025 Die Astakrobaten — Minecraft lebt durch Gemeinschaft & Chaos.
+</footer>
+
+<script>
+function updateStatus() {
+  fetch("/status")
+    .then(res => res.json())
+    .then(data => {
+      document.querySelectorAll("[data-user]").forEach(el => {
+        const user = el.getAttribute("data-user");
+        const dot = el.querySelector(".status-dot");
+        const state = data[user] || "offline";
+        dot.className = "status-dot " + state;
+      });
+    });
+}
+updateStatus();
+setInterval(updateStatus, 5000);
+</script>
+
+</body>
+</html>

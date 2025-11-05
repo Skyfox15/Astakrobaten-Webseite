@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Die Astakrobaten – Chaos, CastCrafter-Events & Arcade-Spaß in der Minecraft-Community." />
+  <title>Die Astakrobaten — Arcade & Events</title>
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#ff9e4f',
+            'accent-light': '#ffd580',
+            dark: '#05070b',
+            panel: 'rgba(255, 255, 255, 0.04)',
+            glass: 'rgba(255, 255, 255, 0.06)',
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'system-ui', 'sans-serif'],
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(20px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-out forwards',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      font-family: 'Orbitron', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #05070b 0%, #0b1221 70%, #000 100%);
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 12px rgba(255, 166, 0, 0.5);
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 166, 0, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border-radius: 1.25rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .panel:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(255, 166, 0, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #ff9e4f, #ffd580);
+      color: #000;
+      font-weight: bold;
+      border-radius: 9999px;
+      padding: 0.65rem 1.4rem;
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: scale(1.03);
+    }
+
+    canvas {
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body class="font-orbitron">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-orange-500/20">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Zur Startseite">
+        <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-lg flex items-center justify-center shadow-md">
+          <span class="text-black font-bold text-sm">AA</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="text-xs text-orange-300">Die</div>
+          <div class="text-lg font-semibold glow-text text-orange-200">Astakrobaten</div>
+        </div>
+      </a>
+      <div class="flex flex-wrap justify-center gap-5 text-sm font-medium">
+        <a href="index.html" class="hover:text-orange-300 transition">Start</a>
+        <a href="about.html" class="hover:text-orange-300 transition">Über Uns</a>
+        <a href="members.html" class="hover:text-orange-300 transition">Mitglieder</a>
+        <a href="galerie.html" class="hover:text-orange-300 transition">Galerie</a>
+        <a href="rules.html" class="hover:text-orange-300 transition">Regeln</a>
+        <a href="contact.html" class="hover:text-orange-300 transition">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="relative h-[85vh] flex items-center justify-center text-center overflow-hidden"
+      style="background: url('https://i.imgur.com/Nhhqa6C.jpeg') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/70"></div>
+      <div class="relative z-10 px-6 max-w-2xl animate-fade-in">
+        <h1 class="text-4xl md:text-6xl font-bold text-orange-300 glow-text mb-4">DIE ASTAKROBATEN</h1>
+        <p class="text-gray-200 text-base md:text-lg mb-8">
+          CastCrafter-Events & Chillen — Willkommen bei denn Astakrobaten.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#arcade" class="btn-primary">🎮 Arcade starten</a>
+          <a href="#events" class="btn-primary">📹 Letztes Event</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 px-4 bg-black/30">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="panel p-7 text-center">
+          <div class="text-3xl mb-3">🏰</div>
+          <h3 class="text-orange-300 text-xl font-semibold mb-3">Chaos</h3>
+          <p class="text-gray-300">Spontane Builds, verrückte Basen und kreative Anarchie — wir bauen, trollen und haben Spaß.</p>
+        </div>
+        <div class="panel p-7 text-center">
+          <div class="text-3xl mb-3">🎥</div>
+          <h3 class="text-orange-300 text-xl font-semibold mb-3">CastCrafter</h3>
+          <p class="text-gray-300">Große Events werden gestreamt — unsere Highlights leben auf YouTube.</p>
+        </div>
+        <div class="panel p-7 text-center">
+          <div class="text-3xl mb-3">🎮</div>
+          <h3 class="text-orange-300 text-xl font-semibold mb-3">Community</h3>
+          <p class="text-gray-300">Regelmäßige Aktionen, Wichteln, Minispiele & Treffen!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="py-20 px-4">
+      <div class="max-w-4xl mx-auto text-center panel p-8">
+        <h2 class="text-orange-300 text-2xl font-bold mb-4">🎥 Event-Highlight</h2>
+        <p class="text-gray-300 mb-8">Hier das letzte CastCrafter-Video mit uns.</p>
+        <div class="aspect-video w-full rounded-xl overflow-hidden border-2 border-orange-500/40 bg-black">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/KL9KdmLrsm8?start=0"
+            title="CastCrafter Event"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCADE -->
+    <section id="arcade" class="py-20 px-4">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="panel p-6">
+          <div class="flex justify-between items-center mb-5">
+            <h3 class="text-orange-300 text-xl font-bold">🎮 Arcade: Snake</h3>
+            <span class="px-3 py-1 text-xs font-bold rounded-full bg-orange-700/50 text-orange-100">Klassiker</span>
+          </div>
+
+          <div class="relative">
+            <div id="overlayStart" class="absolute inset-0 flex items-center justify-center bg-black/80 rounded-lg z-30">
+              <div class="text-center text-white">
+                <p class="text-sm mb-2">Drücke <strong>SPACE</strong> oder tippe, um zu starten</p>
+                <p class="text-xs text-gray-400">Pfeiltasten = Steuerung</p>
+              </div>
+            </div>
+            <canvas id="gameCanvas" width="480" height="360" class="w-full rounded-lg bg-black border-4 border-orange-600" tabindex="0"></canvas>
+          </div>
+
+          <div class="mt-5 flex flex-col sm:flex-row justify-between gap-3">
+            <div class="flex gap-3">
+              <div class="bg-black/60 px-4 py-2 rounded-lg text-orange-200 text-sm">Punkte: <span id="score">0</span></div>
+              <div class="bg-black/60 px-4 py-2 rounded-lg text-orange-300 text-sm">Highscore: <span id="highscore">0</span></div>
+            </div>
+            <button id="restartBtn" class="btn-primary text-sm">↺ Neustart</button>
+          </div>
+        </div>
+
+        <div class="panel p-6 flex flex-col justify-between">
+          <div>
+            <h4 class="text-orange-300 text-xl font-bold mb-4">So geht’s</h4>
+            <ul class="space-y-2 text-gray-300 text-sm">
+              <li>✅ Drücke <strong>Leertaste</strong> oder tippe auf das Spiel, um zu starten</li>
+              <li>🕹️ Steuere die Schlange mit den <strong>Pfeiltasten</strong></li>
+              <li>💾 Dein Highscore wird im Browser gespeichert</li>
+            </ul>
+          </div>
+          <div class="mt-6">
+            <h5 class="text-orange-300 font-semibold mb-2">💡 Entwickler-Modus</h5>
+            <p class="text-xs text-gray-400">
+              Doppelklick auf „Neustart“ → Highscore löschen.<br>
+              Debugging über <code class="bg-gray-800 px-1 rounded">window.AA</code> in der Konsole.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-4 bg-black/40 border-t border-orange-800/30 text-center text-gray-400 text-sm">
+    <p>© 2025 Die Astakrobaten — Nicht verbunden mit Mojang oder CastCrafter.</p>
+    <p class="mt-2">
+  </footer>
+
+  <!-- GAME SCRIPT -->
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    const overlay = document.getElementById('overlayStart');
+    const scoreEl = document.getElementById('score');
+    const highscoreEl = document.getElementById('highscore');
+    const restartBtn = document.getElementById('restartBtn');
+
+    let gameLoop = null;
+    let score = 0;
+    let highscore = parseInt(localStorage.getItem('snakeHighscore')) || 0;
+    const gridSize = 20;
+    const speed = 130;
+
+    highscoreEl.textContent = highscore;
+
+    const startGame = () => {
+      if (gameLoop) clearTimeout(gameLoop);
+      overlay.style.display = 'none';
+      score = 0;
+      scoreEl.textContent = '0';
+
+      const snake = [{ x: 10, y: 10 }];
+      let direction = { x: 1, y: 0 };
+      let nextDirection = { ...direction };
+      let food = generateFood(snake);
+
+      const handleKey = (e) => {
+        if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) return;
+        e.preventDefault();
+        const { x, y } = direction;
+        if (e.key === 'ArrowUp' && y === 0) nextDirection = { x: 0, y: -1 };
+        if (e.key === 'ArrowDown' && y === 0) nextDirection = { x: 0, y: 1 };
+        if (e.key === 'ArrowLeft' && x === 0) nextDirection = { x: -1, y: 0 };
+        if (e.key === 'ArrowRight' && x === 0) nextDirection = { x: 1, y: 0 };
+      };
+
+      document.addEventListener('keydown', handleKey);
+
+      function generateFood(body) {
+        let newFood;
+        do {
+          newFood = {
+            x: Math.floor(Math.random() * (canvas.width / gridSize)),
+            y: Math.floor(Math.random() * (canvas.height / gridSize))
+          };
+        } while (body.some(s => s.x === newFood.x && s.y === newFood.y));
+        return newFood;
+      }
+
+      function draw() {
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#ff6a00';
+        ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+        ctx.fillStyle = '#ffa733';
+        snake.forEach(s => ctx.fillRect(s.x * gridSize, s.y * gridSize, gridSize - 2, gridSize - 2));
+      }
+
+      function update() {
+        direction = { ...nextDirection };
+        const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+
+        if (
+          head.x < 0 || head.y < 0 ||
+          head.x >= canvas.width / gridSize ||
+          head.y >= canvas.height / gridSize ||
+          snake.some(s => s.x === head.x && s.y === head.y)
+        ) {
+          gameOver();
+          return;
+        }
+
+        snake.unshift(head);
+        if (head.x === food.x && head.y === food.y) {
+          score++;
+          scoreEl.textContent = score;
+          food = generateFood(snake);
+        } else {
+          snake.pop();
+        }
+
+        draw();
+        gameLoop = setTimeout(update, speed);
+      }
+
+      function gameOver() {
+        document.removeEventListener('keydown', handleKey);
+        if (score > highscore) {
+          highscore = score;
+          localStorage.setItem('snakeHighscore', highscore);
+          highscoreEl.textContent = highscore;
+        }
+        overlay.style.display = 'flex';
+      }
+
+      draw();
+      gameLoop = setTimeout(update, speed);
+    };
+
+    overlay.addEventListener('click', startGame);
+    document.addEventListener('keydown', e => e.code === 'Space' && !gameLoop && startGame());
+    restartBtn.addEventListener('click', startGame);
+    restartBtn.addEventListener('dblclick', () => {
+      localStorage.removeItem('snakeHighscore');
+      highscore = 0;
+      highscoreEl.textContent = '0';
+    });
+
+    window.AA = { version: '2.0', highscore };
+  </script>
+</body>
+</html>

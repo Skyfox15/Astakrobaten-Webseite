@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Die offiziellen Regeln der Astakrobaten – halte dich daran und bleib Teil der Community!" />
+  <title>Regeln – Die Astakrobaten</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#ff9e4f',
+            'accent-light': '#ffd580',
+            dark: '#05070b',
+            panel: 'rgba(255, 255, 255, 0.04)',
+            glass: 'rgba(255, 255, 255, 0.06)',
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      font-family: 'Orbitron', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #05070b 0%, #0b1221 70%, #000 100%);
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 12px rgba(255, 166, 0, 0.5);
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 166, 0, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .panel:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(255, 166, 0, 0.2);
+    }
+
+    .rule-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff9e4f;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-orange-500/20">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Zur Startseite">
+        <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-lg flex items-center justify-center shadow-md">
+          <span class="text-black font-bold text-sm">AA</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="text-xs text-orange-300">Die</div>
+          <div class="text-lg font-semibold glow-text text-orange-200">Astakrobaten</div>
+        </div>
+      </a>
+      <div class="flex flex-wrap justify-center gap-5 text-sm font-medium">
+        <a href="index.html" class="hover:text-orange-300 transition">Start</a>
+        <a href="about.html" class="hover:text-orange-300 transition">Über Uns</a>
+        <a href="members.html" class="hover:text-orange-300 transition">Mitglieder</a>
+        <a href="galerie.html" class="hover:text-orange-300 transition">Galerie</a>
+        <a href="rules.html" class="text-orange-300">Regeln</a>
+        <a href="contact.html" class="hover:text-orange-300 transition">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-[50vh] flex items-center justify-center text-center overflow-hidden"
+    style="background-image: url('https://i.imgur.com/Nhhqa6C.jpeg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative z-10 px-6 max-w-2xl">
+      <h1 class="text-4xl md:text-6xl font-bold text-orange-300 glow-text">Regeln</h1>
+      <p class="mt-4 text-gray-200 text-base md:text-lg">
+        Unsere goldenen Regeln – halte dich daran und bleib ein Astakrobat!
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <main class="py-20 px-4 max-w-6xl mx-auto space-y-20">
+
+    <!-- WHY RULES? -->
+    <section class="text-center max-w-3xl mx-auto">
+      <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+        Diese Regeln sorgen für Respekt, Fairness und Spaß für alle.  
+        Wer sie bricht, riskiert Verwarnungen oder sogar einen Bann.  
+        Aber bei uns zählt vor allem: <strong class="text-orange-300">Gemeinschaft</strong>.
+      </p>
+    </section>
+
+    <!-- RULES GRID -->
+    <section>
+      <h2 class="text-3xl text-orange-300 text-center mb-12 glow-text">Unsere Kernregeln</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="panel">
+          <div class="rule-icon">👤</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">Ein Account</h3>
+          <p class="text-gray-300 text-sm">Nur ein Account pro Person. Mit dem Betreten akzeptierst du alle Regeln.</p>
+        </div>
+
+        <div class="panel">
+          <div class="rule-icon">👴</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">Alter</h3>
+          <p class="text-gray-300 text-sm">Erst ab 14 Jahren (ausnahmen per Dc!)</p>
+        </div>
+
+        <div class="panel">
+          <div class="rule-icon">🤝</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">Respektvoller Umgang</h3>
+          <p class="text-gray-300 text-sm">Keine Beleidigungen, Diskriminierung oder toxisches Verhalten.</p>
+        </div>
+
+        <div class="panel">
+          <div class="rule-icon">🚫</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">Keine Cheats</h3>
+          <p class="text-gray-300 text-sm">Hacks, unerlaubte Mods oder Exploits führen zum sofortigen Bann.</p>
+        </div>
+
+        <div class="panel">
+          <div class="rule-icon">🏰</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">Kein Griefing</h3>
+          <p class="text-gray-300 text-sm">Zerstören oder stehlen ist verboten – schütze und respektiere fremde Bauten.</p>
+        </div>
+
+        <div class="panel">
+          <div class="rule-icon">⚖️</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">Admin-Entscheidung</h3>
+          <p class="text-gray-300 text-sm">Admins entscheiden verbindlich. Melde Verstöße mit Beweisen (Screenshots/Videos).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPORT SECTION -->
+    <section class="text-center panel p-8 max-w-3xl mx-auto">
+      <h3 class="text-2xl text-orange-300 mb-4 glow-text">Verstoß beobachtet?</h3>
+      <p class="text-gray-300 text-sm mb-6">
+        Melde Regelverstöße direkt an unser Team – mit Beweisen und ruhigem Ton.
+      </p>
+      <a href="contact.html" class="inline-block bg-gradient-to-r from-orange-500 to-yellow-400 text-black font-bold py-2 px-6 rounded-full text-sm hover:opacity-90 transition">
+        ➤ Zum Kontaktformular
+      </a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-4 bg-black/40 border-t border-orange-800/30 text-center text-gray-400 text-sm">
+    <p>© 2025 Die Astakrobaten — Nicht verbunden mit Mojang oder CastCrafter.</p>
+    <p class="mt-2">
+  </footer>
+
+</body>
+</html>

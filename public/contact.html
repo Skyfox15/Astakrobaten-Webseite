@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Kontakt, Impressum & Server-Status der Astakrobaten – Minecraft Community seit 2025." />
+  <title>Kontakt & Impressum – Die Astakrobaten</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#ff9e4f',
+            'accent-light': '#ffd580',
+            dark: '#05070b',
+            panel: 'rgba(255, 255, 255, 0.04)',
+            glass: 'rgba(255, 255, 255, 0.06)',
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html, body {
+      font-family: 'Orbitron', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #05070b 0%, #0b1221 70%, #000 100%);
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 12px rgba(255, 166, 0, 0.5);
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 166, 0, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .panel:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(255, 166, 0, 0.2);
+    }
+
+    .copy-btn {
+      background: rgba(255, 158, 79, 0.2);
+      border: 1px solid #ff9e4f;
+      color: #ffd580;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .copy-btn:hover {
+      background: linear-gradient(90deg, #ff9e4f, #ffd580);
+      color: #000;
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    .status-online { background: #10b981; box-shadow: 0 0 8px #10b981; }
+    .status-offline { background: #ef4444; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-orange-500/20">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Zur Startseite">
+        <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-lg flex items-center justify-center shadow-md">
+          <span class="text-black font-bold text-sm">AA</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="text-xs text-orange-300">Die</div>
+          <div class="text-lg font-semibold glow-text text-orange-200">Astakrobaten</div>
+        </div>
+      </a>
+      <div class="flex flex-wrap justify-center gap-5 text-sm font-medium">
+        <a href="index.html" class="hover:text-orange-300 transition">Start</a>
+        <a href="about.html" class="hover:text-orange-300 transition">Über Uns</a>
+        <a href="members.html" class="hover:text-orange-300 transition">Mitglieder</a>
+        <a href="galerie.html" class="hover:text-orange-300 transition">Galerie</a>
+        <a href="rules.html" class="hover:text-orange-300 transition">Regeln</a>
+        <a href="contact.html" class="text-orange-300">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-[50vh] flex items-center justify-center text-center overflow-hidden"
+    style="background-image: url('https://i.imgur.com/Nhhqa6C.jpeg'); background-size: cover; background-position: center;">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative z-10 px-6 max-w-2xl">
+      <h1 class="text-4xl md:text-6xl font-bold text-orange-300 glow-text">Kontakt & Impressum</h1>
+      <p class="mt-4 text-gray-200 text-base md:text-lg">
+        Erreiche uns, erfahre mehr über uns – oder checke den Live-Server-Status!
+      </p>
+    </div>
+  </section>
+
+  <main class="py-20 px-4 max-w-6xl mx-auto space-y-20">
+
+    <!-- KONTAKT -->
+    <section>
+      <h2 class="text-3xl text-orange-300 text-center mb-12 glow-text">Kontaktmöglichkeiten</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="panel">
+          <div class="text-4xl mb-4">💬</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">Discord</h3>
+          <p class="text-gray-300 text-sm mb-5">Tritt unserem Server bei und chatte live mit der Community!</p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="https://discord.gg/kXQ8Tdaytt" target="_blank" class="copy-btn">Server öffnen</a>
+            <button class="copy-btn" onclick="copyText('https://discord.gg/kXQ8Tdaytt')">Link kopieren</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="text-4xl mb-4">✉️</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">E-Mail</h3>
+          <p class="text-gray-300 text-sm mb-5">Schreib uns bei Fragen, Feedback oder Ideen!</p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="mailto:Im aufbau" class="copy-btn">E-Mail öffnen</a>
+            <button class="copy-btn" onclick="copyText('geht gerade nicht')">Adresse kopieren</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="text-4xl mb-4">🌐</div>
+          <h3 class="text-xl font-semibold text-orange-300 mb-3">Website</h3>
+          <p class="text-gray-300 text-sm mb-5">Besuche unsere offizielle Seite für News & Updates.</p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="https://astakrobaten.cc" target="_blank" class="copy-btn">Website öffnen</a>
+            <button class="copy-btn" onclick="copyText('https://astakrobaten.cc')">Link kopieren</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVER STATUS -->
+    <section>
+      <h2 class="text-3xl text-orange-300 text-center mb-8 glow-text">Live-Server-Status</h2>
+      <div class="panel max-w-2xl mx-auto">
+        <p class="text-gray-300 text-sm mb-4">Prüft automatisch, ob unser Minecraft-Server erreichbar ist.</p>
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="status-indicator" id="statusDot"></span>
+          <span id="statusText" class="text-lg">Wird geladen...</span>
+        </div>
+        <p id="playerCount" class="text-gray-400 text-sm">Spieler: –</p>
+        <p class="text-xs text-gray-500 mt-4">Adresse: <code class="bg-black/40 px-2 py-1 rounded">astakrobaten.cc</code></p>
+      </div>
+    </section>
+
+    <!-- IMPRESSUM -->
+    <section>
+      <h2 class="text-3xl text-orange-300 text-center mb-12 glow-text">Impressum & Rechtliches</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="panel">
+          <h3 class="text-xl font-semibold text-orange-300 mb-4">Verantwortlich</h3>
+          <p class="text-gray-300 text-sm">
+            <strong>Die Astakrobaten</strong><br/>
+            Vertreten durch: Skyfox2<br/>
+            Deutschland<br/>
+          </p>
+        </div>
+        <div class="panel">
+          <h3 class="text-xl font-semibold text-orange-300 mb-4">Rechtliche Hinweise</h3>
+          <p class="text-gray-300 text-sm">
+            Inhaltlich verantwortlich gemäß § 55 Abs. 2 RStV.<br/>
+            Diese Seite ist nicht mit Mojang, Microsoft oder CastCrafter verbunden.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-4 bg-black/40 border-t border-orange-800/30 text-center text-gray-400 text-sm">
+    <p>© 2025 Die Astakrobaten — Minecraft Hauptgruppe</p>
+    <p class="mt-2">
+  </footer>
+
+  <script>
+    // Kopier-Funktion
+    function copyText(text) {
+      navigator.clipboard.writeText(text.trim()).then(() => {
+        const originalBtn = event.target;
+        const originalText = originalBtn.textContent;
+        originalBtn.textContent = 'Kopiert!';
+        originalBtn.style.opacity = '0.8';
+        setTimeout(() => {
+          originalBtn.textContent = originalText;
+          originalBtn.style.opacity = '1';
+        }, 1500);
+      });
+    }
+
+    // Server-Status abfragen
+    async function fetchServerStatus() {
+      const statusDot = document.getElementById('statusDot');
+      const statusText = document.getElementById('statusText');
+      const playerCount = document.getElementById('playerCount');
+
+      try {
+        // Nutzt eine öffentliche Minecraft-Status-API (z. B. mcapi.us)
+        const response = await fetch(`https://mcapi.us/server/status?ip=astakrobaten.cc`);
+        const data = await response.json();
+
+        if (data && data.online) {
+          statusDot.className = 'status-indicator status-online';
+          statusText.textContent = 'Online';
+          playerCount.textContent = `Spieler: ${data.players.now} / ${data.players.max}`;
+        } else {
+          statusDot.className = 'status-indicator status-offline';
+          statusText.textContent = 'Offline';
+          playerCount.textContent = 'Keine Spieler';
+        }
+      } catch (error) {
+        statusDot.className = 'status-indicator status-offline';
+        statusText.textContent = 'Fehler';
+        playerCount.textContent = 'Status nicht abrufbar';
+        console.warn('Server-Status konnte nicht geladen werden:', error);
+      }
+    }
+
+    // Sofort laden + alle 30 Sekunden aktualisieren
+    fetchServerStatus();
+    setInterval(fetchServerStatus, 30000);
+  </script>
+
+</body>
+</html>

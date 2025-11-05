@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Galerie der Astakrobaten – Rückblick auf unsere Minecraft-Events." />
+  <title>Galerie – Die Astakrobaten</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          accent: '#ff9e4f',
+          'accent-light': '#ffd580',
+          dark: '#05070b',
+          panel: 'rgba(255, 255, 255, 0.04)',
+          glass: 'rgba(255, 255, 255, 0.06)',
+        },
+        fontFamily: {
+          orbitron: ['Orbitron', 'system-ui', 'sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+
+
+  <style>
+    html, body {
+      font-family: 'Orbitron', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #05070b 0%, #0b1221 70%, #000 100%);
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 12px rgba(255, 166, 0, 0.5);
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 166, 0, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .panel:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(255, 166, 0, 0.2);
+    }
+
+    .panel img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(255, 213, 128, 0.1);
+      display: block;
+    }
+
+    .event-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff9e4f;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-orange-500/20">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Zur Startseite">
+        <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-lg flex items-center justify-center shadow-md">
+          <span class="text-black font-bold text-sm">AA</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="text-xs text-orange-300">Die</div>
+          <div class="text-lg font-semibold glow-text text-orange-200">Astakrobaten</div>
+        </div>
+      </a>
+      <div class="flex flex-wrap justify-center gap-5 text-sm font-medium">
+        <a href="index.html" class="hover:text-orange-300 transition">Start</a>
+        <a href="about.html" class="hover:text-orange-300 transition">Über Uns</a>
+        <a href="members.html" class="hover:text-orange-300 transition">Mitglieder</a>
+        <a href="galerie.html" class="hover:text-orange-300 transition">Galerie</a>
+        <a href="rules.html" class="hover:text-orange-300 transition">Regeln</a>
+        <a href="contact.html" class="hover:text-orange-300 transition">Kontakt</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="text-center py-16 bg-black/30">
+    <h1 class="text-4xl md:text-5xl font-bold text-orange-300 glow-text">Event-Galerie</h1>
+    <p class="text-gray-300 mt-4 max-w-2xl mx-auto px-4">
+      Ein Rückblick auf unsere chaotischsten, kreativsten und legendärsten Minecraft-Momente!
+    </p>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 pb-20 space-y-20">
+
+    <!-- EVENTS -->
+    <!-- Funktion zum Rendern – hier manuell, aber konsistent -->
+    <section>
+      <h2 class="event-title">🏛️ Zivilisation</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/eh0pac9.png" alt="Der erste Wither"><p class="mt-3 text-gray-300 text-sm">Der erste Wither</p></div>
+        <div class="panel"><img src="https://i.imgur.com/cAC7Od4.jpeg" alt="Aufbau der ersten Strukturen"><p class="mt-3 text-gray-300 text-sm">Aufbau der ersten Strukturen</p></div>
+        <div class="panel"><img src="https://i.imgur.com/zaO1fSQ.jpeg" alt="man Malte!"><p class="mt-3 text-gray-300 text-sm">man Malte!</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">🐜 Ameisenglas</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/pENbNRC.png" alt="Chaos trifft Struktur"><p class="mt-3 text-gray-300 text-sm">Chaos trifft Struktur</p></div>
+        <div class="panel"><img src="https://i.imgur.com/5VM5dEZ.png" alt="Alle arbeiten zusammen"><p class="mt-3 text-gray-300 text-sm">Alle arbeiten zusammen</p></div>
+        <div class="panel"><img src="https://i.imgur.com/NLLAKtc.png" alt="Für Mehlbach!"><p class="mt-3 text-gray-300 text-sm">Für Mehlbach!</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">🌍 Tilted World</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/nIS2uec.jpeg" alt="Alles schräg"><p class="mt-3 text-gray-300 text-sm">Alles schräg</p></div>
+        <div class="panel"><img src="https://i.imgur.com/UD01ktk.jpeg" alt="Nichts bleibt wie es war"><p class="mt-3 text-gray-300 text-sm">Nichts bleibt wie es war</p></div>
+        <div class="panel"><img src="https://i.imgur.com/Ttsk9Hc.png" alt="Teamwork"><p class="mt-3 text-gray-300 text-sm">Teamwork</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">🏗️ Unendliche Baulimit</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/Esacwdc.png" alt="Hoch hinaus"><p class="mt-3 text-gray-300 text-sm">Hoch hinaus</p></div>
+        <div class="panel"><img src="https://i.imgur.com/nZ1X7vu.jpeg" alt="Keine Grenzen"><p class="mt-3 text-gray-300 text-sm">Keine Grenzen</p></div>
+        <div class="panel"><img src="https://i.imgur.com/hE60XBg.png" alt="Justen liebts!"><p class="mt-3 text-gray-300 text-sm">Justen liebts!</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">⏱️ 7 Tage Creative</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/o6Vuys3.png" alt="Sieben Tage purer Wahnsinn"><p class="mt-3 text-gray-300 text-sm">Sieben Tage purer Wahnsinn</p></div>
+        <div class="panel"><img src="https://i.imgur.com/JR6Oc9r.png" alt="Kein Rauchen!"><p class="mt-3 text-gray-300 text-sm">Kein Rauchen!</p></div>
+        <div class="panel"><img src="https://i.imgur.com/NaWxaf1.jpeg" alt="Größter scheiß!"><p class="mt-3 text-gray-300 text-sm">Größter scheiß!</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">💥 Astattack</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/O7C1Uxx.jpeg" alt="Explosionen pur"><p class="mt-3 text-gray-300 text-sm">Explosionen pur</p></div>
+        <div class="panel"><img src="https://i.imgur.com/d0uGzp4.png" alt="Eskalation total"><p class="mt-3 text-gray-300 text-sm">Eskalation total</p></div>
+        <div class="panel"><img src="https://i.imgur.com/gOM5YFe.png" alt="Chaos maximal"><p class="mt-3 text-gray-300 text-sm">Chaos maximal</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">🔥 Only Nether</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/WNCEyfl.png" alt="Hölle auf Erden"><p class="mt-3 text-gray-300 text-sm">Hölle auf Erden</p></div>
+        <div class="panel"><img src="https://i.imgur.com/Xx332ii.png" alt="Überleben unmöglich"><p class="mt-3 text-gray-300 text-sm">Überleben unmöglich</p></div>
+        <div class="panel"><img src="https://i.imgur.com/72fDWKi.png" alt="Nur Nether"><p class="mt-3 text-gray-300 text-sm">Nur Nether</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">🎲 CA Würfel Bau</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/WA7bbYh.png" alt="Kreative Würfel"><p class="mt-3 text-gray-300 text-sm">Kreative Würfel</p></div>
+        <div class="panel"><img src="https://i.imgur.com/yi8XyeZ.png" alt="Architektur in Würfeln"><p class="mt-3 text-gray-300 text-sm">Architektur in Würfeln</p></div>
+        <div class="panel"><img src="https://i.imgur.com/sA5cODB.png" alt="Pixelperfektion"><p class="mt-3 text-gray-300 text-sm">Pixelperfektion</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">🧩 Gomme R/Place</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/MHq4Bgg.png" alt="Pixelkunst pur"><p class="mt-3 text-gray-300 text-sm">Pixelkunst pur</p></div>
+        <div class="panel"><img src="https://i.imgur.com/vwi9wqf.jpeg" alt="Block für Block"><p class="mt-3 text-gray-300 text-sm">Block für Block</p></div>
+        <div class="panel"><img src="https://i.imgur.com/BPzzhck.jpeg" alt="Gemeinschaftswerk"><p class="mt-3 text-gray-300 text-sm">Gemeinschaftswerk</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">🚀 End Event</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/keQgiS2.jpeg" alt="Der letzte Akt"><p class="mt-3 text-gray-300 text-sm">Der letzte Akt</p></div>
+        <div class="panel"><img src="https://i.imgur.com/by5PjTI.png" alt="Ende der Geschichte"><p class="mt-3 text-gray-300 text-sm">Ende der Geschichte</p></div>
+        <div class="panel"><img src="https://i.imgur.com/C1JPEsd.png" alt="Finaler Showdown"><p class="mt-3 text-gray-300 text-sm">Finaler Showdown</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">💀 Hardcore Event</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/fvhfGLl.png" alt="Spannung pur"><p class="mt-3 text-gray-300 text-sm">Spannung pur</p></div>
+        <div class="panel"><img src="" alt="Ein Fehler = Tod" class="bg-gray-800 text-gray-600 flex items-center justify-center" style="aspect-ratio: 4/3; color: #444;">Bild fehlt</div>
+        <div class="panel"><img src="" alt="Challenge extrem" class="bg-gray-800 text-gray-600 flex items-center justify-center" style="aspect-ratio: 4/3; color: #444;">Bild fehlt</div>
+      </div>
+    </section>
+
+    <!-- Neue Beispiel-Events -->
+    <section>
+      <h2 class="event-title">🎨 Randomizer Welt</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/g2gKuSC.jpeg" alt="Alles random"><p class="mt-3 text-gray-300 text-sm">Alles random</p></div>
+        <div class="panel"><img src="https://i.imgur.com/Ke6OQpH.jpeg" alt="Die Kopie"><p class="mt-3 text-gray-300 text-sm">Die Kopie</p></div>
+        <div class="panel"><img src="https://i.imgur.com/I01YqPp.jpeg" alt="Malte sein Meisterwerk"><p class="mt-3 text-gray-300 text-sm">Malte sein Meisterwerk</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">⚡ Wüsten Event</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/Wrw11tt.jpeg" alt="Gruppen Bild"><p class="mt-3 text-gray-300 text-sm">Gruppen Bild</p></div>
+        <div class="panel"><img src="https://i.imgur.com/aVwDxRc.jpeg" alt="Dorf nimmt Form an"><p class="mt-3 text-gray-300 text-sm">Dorf nimmt Form an</p></div>
+        <div class="panel"><img src="https://i.imgur.com/Dc8GvXb.jpeg" alt="Fertiges Dorf"><p class="mt-3 text-gray-300 text-sm">Fertiges Dorf</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="event-title">🌌 Allianz Creator Cup</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="panel"><img src="https://i.imgur.com/uBLWEIy.jpeg" alt="Die Gruppe"><p class="mt-3 text-gray-300 text-sm">Die Gruppe</p></div>
+        <div class="panel"><img src="https://i.imgur.com/vkYx6Cc.jpeg" alt="Gewinner!"><p class="mt-3 text-gray-300 text-sm">Gewinner!</p></div>
+        <div class="panel"><img src="https://i.imgur.com/hEiGaQt.jpeg" alt="Kevin?"><p class="mt-3 text-gray-300 text-sm">Kevin?</p></div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-10 px-4 bg-black/40 border-t border-orange-800/30 text-center text-gray-400 text-sm">
+    <p>© 2025 Die Astakrobaten — Erinnerungen in Pixeln, gemeinsam unvergesslich.</p>
+    <p class="mt-2">
+  </footer>
+
+</body>
+</html>
