@@ -8,17 +8,12 @@ const app = express();
 // Statischer Ordner
 app.use(express.static(path.join(__dirname, "public")));
 
-// Optional: Fallback, falls jemand /galerie.html oder andere Seiten direkt aufruft
-app.get('*', (req, res) => {
-  const filePath = path.join(__dirname, "public", req.path);
-  res.sendFile(filePath, err => {
-    if (err) {
-      // Wenn Datei nicht existiert, fallback auf index.html
-      res.sendFile(path.join(__dirname, "public", "index.html"));
-    }
-  });
+// Optional: Wenn jemand die Root-URL aufruft
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+// Discord Bot Setup
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
