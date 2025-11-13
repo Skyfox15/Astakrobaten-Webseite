@@ -34,6 +34,9 @@ const TARGET_IDS = {
   "Alelx_": "698085078412165151",
   "Kobix": "1188805546049015880",
   "Icerice9": "965512624190136350"
+  "Shinoby_qp": "1243873178066092082",
+  "Justen187": "1037827807469916241"
+
 };
 
 client.on('ready', async () => {
@@ -60,3 +63,4 @@ client.login(process.env.DISCORD_TOKEN);
 app.listen(PORT, () =>
   console.log(`🌍 Webserver läuft → http://localhost:${PORT}`)
 );
+
