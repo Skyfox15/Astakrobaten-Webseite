@@ -87,13 +87,52 @@
     canvas {
       image-rendering: pixelated;
     }
+
+    /* Neue Animation für die Navigationspunkte */
+    .nav-item {
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .nav-item:nth-child(1) { animation-delay: 0.1s; }
+    .nav-item:nth-child(2) { animation-delay: 0.2s; }
+    .nav-item:nth-child(3) { animation-delay: 0.3s; }
+    .nav-item:nth-child(4) { animation-delay: 0.4s; }
+    .nav-item:nth-child(5) { animation-delay: 0.5s; }
+    .nav-item:nth-child(6) { animation-delay: 0.6s; }
+
+    /* Focus Styles für Barrierefreiheit */
+    a:focus, button:focus, iframe:focus {
+      outline: 2px dashed #ff9e4f;
+      outline-offset: 2px;
+    }
+
+    /* Loader für das Video */
+    .video-loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top: 4px solid #ff9e4f;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
   </style>
 </head>
 <body class="font-orbitron">
 
   <!-- NAV -->
   <header class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-orange-500/20">
-    <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <nav class="container mx-auto px-4 py-3 flex flex-wrap items-center justify-between">
       <a href="index.html" class="flex items-center gap-3" aria-label="Zur Startseite">
         <div class="w-11 h-11 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-lg flex items-center justify-center shadow-md">
           <span class="text-black font-bold text-sm">AA</span>
@@ -103,13 +142,13 @@
           <div class="text-lg font-semibold glow-text text-orange-200">Astakrobaten</div>
         </div>
       </a>
-      <div class="flex flex-wrap justify-center gap-5 text-sm font-medium">
-        <a href="index.html" class="hover:text-orange-300 transition">Start</a>
-        <a href="about.html" class="hover:text-orange-300 transition">Über Uns</a>
-        <a href="members.html" class="hover:text-orange-300 transition">Mitglieder</a>
-        <a href="galerie.html" class="hover:text-orange-300 transition">Galerie</a>
-        <a href="rules.html" class="hover:text-orange-300 transition">Regeln</a>
-        <a href="contact.html" class="hover:text-orange-300 transition">Kontakt</a>
+      <div class="flex flex-wrap justify-center gap-5 text-sm font-medium mt-2 md:mt-0">
+        <a href="index.html" class="hover:text-orange-300 transition nav-item">Start</a>
+        <a href="about.html" class="hover:text-orange-300 transition nav-item">Über Uns</a>
+        <a href="members.html" class="hover:text-orange-300 transition nav-item">Mitglieder</a>
+        <a href="galerie.html" class="hover:text-orange-300 transition nav-item">Galerie</a>
+        <a href="rules.html" class="hover:text-orange-300 transition nav-item">Regeln</a>
+        <a href="contact.html" class="hover:text-orange-300 transition nav-item">Kontakt</a>
       </div>
     </nav>
   </header>
@@ -154,17 +193,20 @@
 
     <!-- EVENTS -->
     <section id="events" class="py-20 px-4">
-      <div class="max-w-4xl mx-auto text-center panel p-8">
+      <div class="max-w-4xl mx-auto text-center panel p-8 relative"> <!-- Relative Position für Loader -->
         <h2 class="text-orange-300 text-2xl font-bold mb-4">🎥 Event-Highlight</h2>
         <p class="text-gray-300 mb-8">Hier das letzte CastCrafter-Video mit uns.</p>
-        <div class="aspect-video w-full rounded-xl overflow-hidden border-2 border-orange-500/40 bg-black">
+        <div class="aspect-video w-full rounded-xl overflow-hidden border-2 border-orange-500/40 bg-black relative"> <!-- Relative Position für Loader -->
+          <div class="video-loader" id="videoLoader"></div>
           <iframe
-            class="w-full h-full"
+            class="w-full h-full opacity-0 transition-opacity duration-300"
+            id="eventVideo"
             src="https://www.youtube.com/embed/KL9KdmLrsm8?start=0"
             title="CastCrafter Event"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            onload="onVideoLoad()"
           ></iframe>
         </div>
       </div>
@@ -222,7 +264,6 @@
   <!-- FOOTER -->
   <footer class="py-10 px-4 bg-black/40 border-t border-orange-800/30 text-center text-gray-400 text-sm">
     <p>© 2025 Die Astakrobaten — Nicht verbunden mit Mojang oder CastCrafter.</p>
-    <p class="mt-2">
   </footer>
 
   <!-- GAME SCRIPT -->
@@ -335,7 +376,23 @@
       highscoreEl.textContent = '0';
     });
 
-    window.AA = { version: '2.0', highscore };
+    window.AA = { version: '2.1', highscore };
+
+    // Funktion zum Verstecken des Loaders nach dem Laden des Videos
+    function onVideoLoad() {
+      const loader = document.getElementById('videoLoader');
+      const videoFrame = document.getElementById('eventVideo');
+      if (loader && videoFrame) {
+        loader.style.display = 'none';
+        videoFrame.style.opacity = '1';
+      }
+    }
+
+    // Fokus-Handling für das Canvas-Element
+    canvas.addEventListener('click', () => {
+        canvas.focus();
+    });
+
   </script>
 </body>
 </html>
